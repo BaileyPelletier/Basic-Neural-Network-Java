@@ -1,6 +1,6 @@
 # Toy-Neural-Network-Java
 
-<p>This neural network is meant to be basic and simple in its design as it is a learning experience. Inlcuded in this repo is a Matrix class library that is also built from the ground-up. The basis of design for these libraries come from a similar repo, <b><a href="https://github.com/BaileyPelletier/Toy-Neural-Network-JS">Toy-Neural-Network-Java.</a></b></p> 
+<p>This neural network is meant to be basic and simple in its design as it is a learning experience. Inlcuded in this repo is a Matrix class library that is also built from the ground-up. The basis of design for these libraries come from a similar repo, <b><a href="https://github.com/BaileyPelletier/Toy-Neural-Network-JS">Toy-Neural-Network-JS.</a></b></p> 
 
 <div>
   Steps:
