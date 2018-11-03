@@ -9,6 +9,7 @@ ToDo:
    - [x] Initialization Methods (Random & Simple)
    - [x] Determinant & Matrix Minor (Took me ALL NIGHT!) derivation methods 
    - [x] Matrix Operations!
+   - [ ] Create mapFunc() Method
    - [ ] Finish Documentation
    - [ ] Future features & methods? (Subspaces, orthogonality, etc)
 - [ ] **Build Neural Network Class Library**
@@ -16,7 +17,7 @@ ToDo:
    - [x] Set up constructor(s)
    - [x] toString() or print() method
    - [x] Initialize weights and biases
-   - [x] Predict method
+   - [ ] Predict method - Need Activation functions to finish
    - [ ] Activation Functions - Need to add a mapFunc() method for Matrix
    - [ ] Training method - Back Propagation
    - [ ] Documentation
