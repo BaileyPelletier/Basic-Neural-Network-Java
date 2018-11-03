@@ -32,12 +32,13 @@ This neural network is meant to be basic and simple in its design as it is a lea
 
 ## Matrix Class Documentation
 
+### Matric UML Class Diagram
 |     Matrix      |
 |--------|
 | - rows: int |
 | - cols: int |
 | - data: double[][] |
-|---|
+|--------------------------------------------------------------|
 | + toString(): String|
 | + initialRand(): void|
 | + initialRandInt(): void|
@@ -55,10 +56,54 @@ This neural network is meant to be basic and simple in its design as it is a lea
 | + setCols(int j): void|
 | + setElement(int i, int j, double val): void|
 | + add(double amount): void|
-|-- **STATIC** --|
+|--------------------------------------------------------------|
+|------------------------ **STATIC** ----------------------------|
 | + fromArray(double[] arr): Matrix|
 | + toArrary(Matrix a): double[]|
 | + add(Matrix a, Matrix b): Matrix|
 | + subtract(Matrix a, Matrix b): Matrix|
 | + mult(Matrix a, Matrix b): Matrix  <--{HARDAMAN PRODUCT} |
 | + dot(Matrix a, Matrix b): Matrix|
+
+
+## Neural Network Class Documentation
+
+### Neural Network UML Class Diagram
+|     Neural Network      |
+|--------|
+| - input_nodes: int |
+| - hidden_nodes: int |
+| - output: double[][] |
+| - input: Matrix |
+| - hidden: Matrix |
+| - output: Matrix |
+| - weights_ih: Matrix |
+| - weights_ho: Matrix |
+| - b_ih: Matrix |
+| - b_ho: Matrix |
+|--------------------------------------------------------------|
+| + toString(): String|
+| + print(): void|
+| + getInput_Nodes(): int|
+| + getHidden_Nodes(): int|
+| + getOutput_Nodes(): int|
+| + getInput(): Matrix|
+| + getHidden(): Matrix|
+| + getOutput(): Matrix|
+| + getWeights_IH(): Matrix|
+| + getWeights_HO(): Matrix|
+| + getBias_IH(): Matrix|
+| + getBias_HO(): Matrix|
+| - setInput_Nodes(int i): void|
+| - setHidden_Nodes(int i): void|
+| - setOutput_Nodes(int i): void|
+| + initializeInput(): void|
+| + initializeInput(double[]): void|
+| + initializeHidden(): void|
+| + initializeOutput(): void|
+| + initializeWeights_IH(): void|
+| + initializeWeights_HO(): void|
+| + initializeBias_IH(): void|
+| + initializeBias_HO(): void|
+| + predict(): void|
+| + predict(double[]): double[]|
