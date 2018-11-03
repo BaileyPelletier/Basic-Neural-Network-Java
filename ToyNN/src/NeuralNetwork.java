@@ -12,20 +12,168 @@
  */
 public class NeuralNetwork {
 	
-	int input_nodes;
-	int hidden_nodes;
-	int output_nodes;
+	//Instance variables
+	private int input_nodes;
+	private int hidden_nodes;
+	private int output_nodes;
+	
+	private Matrix input;
+	private Matrix hidden;
+	private Matrix output;
 	
 	
+	private Matrix weights_ih;
+	private Matrix weights_ho;
 	
-	public NeuralNetwork (int input, int hidden, int output) {
+	private Matrix b_ih;
+	private Matrix b_ho;
+	
+	
+	//Constructors
+	public NeuralNetwork (int input_nodes, int hidden_nodes, int output_nodes) {
+		setInput_Nodes(input_nodes);
+		setHidden_Nodes(hidden_nodes);
+		setOutput_Nodes(output_nodes);
 		
+		initializeInput();
+		initializeOutput();
+		initializeHidden();
+		
+		initializeWeights_IH();
+		initializeWeights_HO();
+		
+		initializeBias_IH();
+		initializeBias_HO();
 	}
 	
 	public NeuralNetwork() {
 		this(1,1,1);
 	}
 	
+	//toString & print
+	public String toString() {
+		String s = "";
+		
+		s += "Input Matrix :\n" + getInput().toString() + "\n";
+		s += "Hidden Matrix :\n" + getHidden().toString() + "\n";
+		s += "Output Matrix :\n" + getOutput().toString() + "\n";
+		
+		s += "Weights_IH Matrix :\n" + getWeights_IH().toString() + "\n";
+		s += "Weights_HO Matrix :\n" + getWeights_HO().toString() + "\n";
+		
+		s += "Bias_IH Matrix :\n" + getBias_IH().toString() + "\n";
+		s += "Bias_HO Matrix :\n" + getBias_HO().toString() + "\n";
+		
+		
+		return s;
+	}
+	public void print() {
+		System.out.println(this.toString());
+	}
+	
+	//Simple Getters
+	public int getInput_Nodes() {
+		return this.input_nodes;
+	}
+	public int getHidden_Nodes() {
+		return this.hidden_nodes;
+	}
+	public int getOutput_Nodes() {
+		return this.output_nodes;
+	}
+	
+	public Matrix getInput() {
+		return this.input;
+	}
+	public Matrix getHidden() {
+		return this.hidden;
+	}
+	public Matrix getOutput() {
+		return this.output;
+	}
+	
+	public Matrix getWeights_IH() {
+		return this.weights_ih;
+	}
+	public Matrix getWeights_HO(){
+		return this.weights_ho;
+	}
+	
+	public Matrix getBias_IH(){
+		return this.b_ih;
+	}
+	public Matrix getBias_HO(){
+		return this.b_ho;
+	}
 	
 	
+	//Simple Setters
+	private void setInput_Nodes(int i) {
+		if (i > 0)
+			this.input_nodes = i;
+		else
+			this.input_nodes = 1;
+	}
+	private void setHidden_Nodes(int i) {
+		if (i > 0)
+			this.hidden_nodes = i;
+		else
+			this.hidden_nodes = 1;
+	}
+	private void setOutput_Nodes(int i) {
+		if (i > 0)
+			this.output_nodes = i;
+		else
+			this.output_nodes = 1;
+	}
+	
+		// Creates & randomly initializes elements
+	public void initializeInput() {
+		input = new Matrix(input_nodes, 1);
+		input.initialRand();
+	}
+	public void initializeInput(double[] arr) {		//Custom input
+		input = Matrix.fromArrary(arr);
+	}
+	
+	public void initializeHidden() {
+		hidden = new Matrix(hidden_nodes, 1);
+	}
+	public void initializeOutput() {
+		output = new Matrix(output_nodes, 1);
+	}
+	
+	public void initializeWeights_IH() {
+		weights_ih = new Matrix(getInput().getRows(), getHidden().getRows());
+		weights_ih.initialRand();
+	}
+	public void initializeWeights_HO() {
+		weights_ho = new Matrix(getHidden().getRows(), getOutput().getRows());
+		weights_ho.initialRand();
+	}
+	
+	public void initializeBias_IH() {
+		b_ih = new Matrix(getHidden().getRows(), 1);
+		b_ih.initialRand();
+	}
+	public void initializeBias_HO() {
+		b_ho = new Matrix(getOutput().getRows(), 1);
+		b_ho.initialRand();
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	public static void main(String[] args) {
+		NeuralNetwork nn = new NeuralNetwork(2,3,1);
+		double[] myInput = {1,0};
+		nn.initializeInput(myInput);
+		nn.print();
+	}
 }

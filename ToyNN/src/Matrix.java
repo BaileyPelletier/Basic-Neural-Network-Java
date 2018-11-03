@@ -111,14 +111,25 @@ public class Matrix {
 	}
 	
 	/**
-	 * Initializes each value of a matrix between 0 and 10
-	 * Rounds to 3 decimal places
+	 * Initializes each value of a matrix between 0 and 1
 	 * 
 	 */
 	public void initialRand() {
 		for (int i = 0; i < rows; i++) {
 			for (int j = 0; j < cols; j++) {
-				this.setElement(i, j, ((int)(Math.random()*10 * 1000))/1000.0);
+				this.setElement(i, j, (Math.random()));
+			}
+		}
+	}
+	/**
+	 * Initializes each value of a matrix between 0 and parameter
+	 * 
+	 * @param max	Max number for random range
+	 */
+	public void initialRand(double max) {
+		for (int i = 0; i < rows; i++) {
+			for (int j = 0; j < cols; j++) {
+				this.setElement(i, j, (Math.random() * max));
 			}
 		}
 	}
