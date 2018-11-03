@@ -9,17 +9,21 @@ ToDo:
    - [x] Initialization Methods (Random & Simple)
    - [x] Determinant & Matrix Minor (Took me ALL NIGHT!) derivation methods 
    - [x] Matrix Operations!
-   - [ ] Create mapFunc() Method
    - [ ] Finish Documentation
    - [ ] Future features & methods? (Subspaces, orthogonality, etc)
+   - [ ] ~~Create mapFunc() Method~~ (Wanted to create a method that would take in a method as parameter. Turns out, requires concepts I'm not familiar with. Will revisit!
 - [ ] **Build Neural Network Class Library**
    - [x] Set up instance variables
    - [x] Set up constructor(s)
    - [x] toString() or print() method
    - [x] Initialize weights and biases
-   - [ ] Predict method - Need Activation functions to finish
-   - [ ] Activation Functions - Need to add a mapFunc() method for Matrix
-   - [ ] Training method - Back Propagation
+   - [x] Predict method - AKA FeedForward
+   - [x] Activation Functions - Hard-coded sigmoid function into predict()
+   - [ ] Add .setLearningRate() for gradient descent calculations in .train()
+   - [ ] Training method .train(input, target) - Gradient Descent & Back Propagation
+      - [ ] Feed Forward method
+      - [ ] Calculate Errors
+      - [ ] Calulcate gradient and deltas for Weight and Bias matrices
    - [ ] Documentation
 - [ ] **Test Libraries**
    - [ ] XOR Problem
