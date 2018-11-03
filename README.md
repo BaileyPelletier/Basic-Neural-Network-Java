@@ -12,6 +12,13 @@ ToDo:
    - [ ] Finish Documentation
    - [ ] Future features & methods? (Subspaces, orthogonality, etc)
 - [ ] **Build Neural Network Class Library**
+   - [ ] Set up instance variables
+   - [ ] Set up constructor(s)
+   - [ ] toString() or print() method
+   - [ ] Initialize weights
+   - [ ] Activation Functions
+   - [ ] Training method
+   - [ ] Predict method
 - [ ] **Test Libraries**
 - [ ] **Add Visualization**
 
