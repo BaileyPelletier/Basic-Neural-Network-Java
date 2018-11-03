@@ -1,10 +1,17 @@
+import java.text.DecimalFormat;
+
 /**
+ * <h1>Matrix Library</h1>
+ * Custom Java library built to provide Matrix math and
+ * operations for simple neural network
+ * </br>
+ * 
  * @author Bailey Pelletier
+ * @version 0.1.0
+ * @since 3 November 2018
  * 
  * 
  */
-
-import java.text.DecimalFormat;
 public class Matrix {
 	
 	//Instance Variables
