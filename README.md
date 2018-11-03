@@ -11,7 +11,9 @@
         <li><del>Constructors & from/toArray methods & toString()</del></li>
         <li><del>Initialization Methods (Random & Simple)</del></li>
         <li><del>Determinant & Matrix Minor (Took me ALL NIGHT!) derivation methods </del></li>
-        <li>Matrix Operations!</li>
+        <li><del>Matrix Operations!</del></li>
+        <li>Create Documentation</li>
+        <li>Future features & methods? (Subspaces, orthogonality, etc)</li>
       </ul>
     </li>
     <li>Build Neural Network Library</li>
