@@ -1,7 +1,8 @@
 
 /**
  * <h1>Neural Network Library</h1>
- * Simple neural network
+ * Simple 3-layered neural network with an input layer,
+ * a hidden layer, and an output layer
  * </br>
  * 
  * @author Bailey Pelletier
@@ -30,6 +31,12 @@ public class NeuralNetwork {
 	
 	
 	//Constructors
+	/**
+	 * Basic constructor for a 3-layered Neural Network
+	 * @param input_nodes
+	 * @param hidden_nodes
+	 * @param output_nodes
+	 */
 	public NeuralNetwork (int input_nodes, int hidden_nodes, int output_nodes) {
 		setInput_Nodes(input_nodes);
 		setHidden_Nodes(hidden_nodes);
@@ -45,12 +52,18 @@ public class NeuralNetwork {
 		initializeBias_IH();
 		initializeBias_HO();
 	}
-	
+	/**
+	 * If passed no parameters, this constructor
+	 * creates a linear neural network
+	 */
 	public NeuralNetwork() {
 		this(1,1,1);
 	}
 	
 	//toString & print
+	/**
+	 * Formats all the matrices into a String
+	 */
 	public String toString() {
 		String s = "";
 		
@@ -67,59 +80,117 @@ public class NeuralNetwork {
 		
 		return s;
 	}
+	/**
+	 * Prints out all matrices of the neural network
+	 */
 	public void print() {
 		System.out.println(this.toString());
 	}
 	
 	//Simple Getters
+	/**
+	 * Gets number of Input nodes
+	 * @return number of Input nodes
+	 */
 	public int getInput_Nodes() {
 		return this.input_nodes;
 	}
+	/**
+	 * Gets number of Hidden nodes
+	 * @return number of Hidden nodes
+	 */
 	public int getHidden_Nodes() {
 		return this.hidden_nodes;
 	}
+	/**
+	 * Gets number of Output nodes
+	 * @return number of Output nodes
+	 */
 	public int getOutput_Nodes() {
 		return this.output_nodes;
 	}
 	
+	/**
+	 * Gets the Input matrix object
+	 * @return vector matrix of input values
+	 */
 	public Matrix getInput() {
 		return this.input;
 	}
+	/**
+	 * Gets the Hidden Matrix object
+	 * @return vector matrix of hidden values
+	 */
 	public Matrix getHidden() {
 		return this.hidden;
 	}
+	/**
+	 * Gets the Output matrix object
+	 * @return vector matrix of output values
+	 */
 	public Matrix getOutput() {
 		return this.output;
 	}
 	
+	/**
+	 * Gets the Weight matrix from input to hidden layers
+	 * @return matrix of weight values from input to hidden layers
+	 */
 	public Matrix getWeights_IH() {
 		return this.weights_ih;
 	}
+	/**
+	 * Gets the Weight matrix from hidden to output layers
+	 * @return matrix of weight values from hidden to output layers
+	 */
 	public Matrix getWeights_HO(){
 		return this.weights_ho;
 	}
 	
+	/**
+	 * Gets the Bias vector from input to hidden layers
+	 * @return matrix of weight values from input to hidden layers
+	 */
 	public Matrix getBias_IH(){
 		return this.b_ih;
 	}
+	/**
+	 * Gets the Bias vector from hidden to output layers
+	 * @return matrix of weight values from hidden to output layers
+	 */
 	public Matrix getBias_HO(){
 		return this.b_ho;
 	}
 	
 	
 	//Simple Setters
+	/**
+	 * Sets the number of input nodes.
+	 * If param is less than 1, number of nodes is set to 1.
+	 * @param i Number of nodes
+	 */
 	private void setInput_Nodes(int i) {
 		if (i > 0)
 			this.input_nodes = i;
 		else
 			this.input_nodes = 1;
 	}
+	/**
+	 * Sets the number of hidden nodes.
+	 * If param is less than 1, number of nodes is set to 1.
+	 * @param i Number of nodes
+	 */
 	private void setHidden_Nodes(int i) {
 		if (i > 0)
 			this.hidden_nodes = i;
 		else
 			this.hidden_nodes = 1;
 	}
+	/**
+	 * Sets the number of output nodes.
+	 * If param is less than 1, number of nodes is set to 1.
+	 * @param i Number of nodes
+	 */
 	private void setOutput_Nodes(int i) {
 		if (i > 0)
 			this.output_nodes = i;
@@ -128,34 +199,65 @@ public class NeuralNetwork {
 	}
 	
 		// Creates & randomly initializes elements
+	/**
+	 * Creates and initializes vector matrix with random values
+	 * between 0 and 1.
+	 */
 	public void initializeInput() {
 		input = new Matrix(input_nodes, 1);
 		input.initialRand();
 	}
+	/**
+	 * Creates and initializes vector matrix based on the 
+	 * array passed as the parameter.
+	 * @param arr
+	 */
 	public void initializeInput(double[] arr) {		//Custom input
 		input = Matrix.fromArrary(arr);
 	}
 	
+	/**
+	 * Creates a Zero vector for hidden layer
+	 */
 	public void initializeHidden() {
 		hidden = new Matrix(hidden_nodes, 1);
 	}
+	/**
+	 * Creates a Zero vector for output layer
+	 */
 	public void initializeOutput() {
 		output = new Matrix(output_nodes, 1);
 	}
 	
+	/**
+	 * Creates and initializes Weight matrix between
+	 * input and hidden layers with random values between 0 and 1.
+	 */
 	public void initializeWeights_IH() {
 		weights_ih = new Matrix(getInput().getRows(), getHidden().getRows());
 		weights_ih.initialRand();
 	}
+	/**
+	 * Creates and initializes Weight matrix between
+	 * hidden and output layers with random values between 0 and 1.
+	 */
 	public void initializeWeights_HO() {
 		weights_ho = new Matrix(getHidden().getRows(), getOutput().getRows());
 		weights_ho.initialRand();
 	}
 	
+	/**
+	 * Creates and initializes Bias vector between
+	 * input and hidden layers with random values between 0 and 1.
+	 */
 	public void initializeBias_IH() {
 		b_ih = new Matrix(getHidden().getRows(), 1);
 		b_ih.initialRand();
 	}
+	/**
+	 * Creates and initializes Bias vector between
+	 * hidden and output layers with random values between 0 and 1.
+	 */
 	public void initializeBias_HO() {
 		b_ho = new Matrix(getOutput().getRows(), 1);
 		b_ho.initialRand();
@@ -163,6 +265,11 @@ public class NeuralNetwork {
 	
 	
 	//Predict Methods
+	/**
+	 * <h2>FeedForward Process</h2>
+	 * Using current weights and inputs, calculates
+	 * hidden layer values and then output layer values
+	 */
 	public void predict() {
 		
 		// H = W-ih(T) • I + B-ih
@@ -196,6 +303,15 @@ public class NeuralNetwork {
 		
 		
 	}
+	/**
+	 * <h2>FeedForward Process</h2>
+	 * Using current weights and user inputs, calculates
+	 * hidden layer values and then output layer values.
+	 * Returns output layer as an array.
+	 * 
+	 * @param inputArr
+	 * @return array of output values
+	 */
 	public double[] predict(double[] inputArr) {
 		
 		input = Matrix.fromArrary(inputArr);
