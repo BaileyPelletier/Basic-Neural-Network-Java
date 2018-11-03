@@ -21,9 +21,10 @@ ToDo:
    - [x] Activation Functions - Hard-coded sigmoid function into predict()
    - [ ] Add .setLearningRate() for gradient descent calculations in .train()
    - [ ] Training method .train(input, target) - Gradient Descent & Back Propagation
-      - [ ] Feed Forward method
-      - [ ] Calculate Errors
-      - [ ] Calulcate gradient and deltas for Weight and Bias matrices
+      - [x] Feed Forward method
+      - [ ] Calculate Errors and Cost Function
+      - [ ] Calulcate gradient descent and deltas for Weight and Bias matrices
+      - [ ] Back-Propagation: Apply deltas to Weigths and Biases
    - [ ] Documentation
 - [ ] **Test Libraries**
    - [ ] XOR Problem
