@@ -16,9 +16,9 @@ ToDo:
    - [x] Set up constructor(s)
    - [x] toString() or print() method
    - [x] Initialize weights and biases
-   - [ ] Predict method
-   - [ ] Activation Functions
-   - [ ] Training method
+   - [x] Predict method
+   - [ ] Activation Functions - Need to add a mapFunc() method for Matrix
+   - [ ] Training method - Back Propagation
    - [ ] Documentation
 - [ ] **Test Libraries**
    - [ ] XOR Problem
