@@ -19,6 +19,7 @@ ToDo:
    - [ ] Predict method
    - [ ] Activation Functions
    - [ ] Training method
+   - [ ] Documentation
 - [ ] **Test Libraries**
    - [ ] XOR Problem
 - [ ] **Add Visualization**
