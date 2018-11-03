@@ -16,9 +16,9 @@ ToDo:
    - [x] Set up constructor(s)
    - [x] toString() or print() method
    - [x] Initialize weights and biases
+   - [ ] Predict method
    - [ ] Activation Functions
    - [ ] Training method
-   - [ ] Predict method
 - [ ] **Test Libraries**
    - [ ] XOR Problem
 - [ ] **Add Visualization**
