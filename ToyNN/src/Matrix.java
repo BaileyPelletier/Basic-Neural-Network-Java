@@ -1,9 +1,7 @@
 /**
+ * @author Bailey Pelletier
  * 
- * @author Bailey Pelletier </br>
- *
- *@
- *
+ * 
  */
 
 import java.text.DecimalFormat;
@@ -284,6 +282,7 @@ public class Matrix {
 
 	/**
 	 * Returns the inverse of the calling Matrix object
+	 * </br>* Currently only works with 2x2 Matricies!
 	 * 
 	 * @return matrix	Inversed matrix
 	 */
