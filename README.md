@@ -97,13 +97,13 @@ This neural network is meant to be basic and simple in its design as it is a lea
 | - setInput_Nodes(int i): void|
 | - setHidden_Nodes(int i): void|
 | - setOutput_Nodes(int i): void|
-| + initializeInput(): void|
+| - initializeInput(): void|
 | + initializeInput(double[]): void|
-| + initializeHidden(): void|
-| + initializeOutput(): void|
-| + initializeWeights_IH(): void|
-| + initializeWeights_HO(): void|
-| + initializeBias_IH(): void|
-| + initializeBias_HO(): void|
+| - initializeHidden(): void|
+| - initializeOutput(): void|
+| - initializeWeights_IH(): void|
+| - initializeWeights_HO(): void|
+| - initializeBias_IH(): void|
+| - initializeBias_HO(): void|
 | + predict(): void|
 | + predict(double[]): double[]|
