@@ -20,6 +20,7 @@ ToDo:
    - [ ] Training method
    - [ ] Predict method
 - [ ] **Test Libraries**
+   - [ ] XOR Problem
 - [ ] **Add Visualization**
 
 ## Matrix Class Documentation
