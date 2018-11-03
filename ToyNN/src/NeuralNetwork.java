@@ -162,7 +162,30 @@ public class NeuralNetwork {
 	}
 	
 	
-	
+	//Predict Methods
+	public void predict() {
+		
+		// H = W-ih(T) • I + B-ih
+		hidden = Matrix.dot(getWeights_IH().getTranspose(), getInput());
+		hidden = Matrix.add(hidden, getBias_IH());
+		//Activation function on H
+		
+		
+		// A = W-ho(T) • H + B-ho
+		output = Matrix.dot(getWeights_HO().getTranspose(), getHidden());
+		output = Matrix.add(output, getBias_HO());
+		//Activation function on A
+		
+		
+	}
+	public double[] predict(double[] inputArr) {
+		
+		input = Matrix.fromArrary(inputArr);
+		
+		predict();
+		
+		return Matrix.toArrary(output);
+	}
 	
 	
 	
@@ -171,9 +194,25 @@ public class NeuralNetwork {
 	
 	
 	public static void main(String[] args) {
-		NeuralNetwork nn = new NeuralNetwork(2,3,1);
-		double[] myInput = {1,0};
-		nn.initializeInput(myInput);
+		NeuralNetwork nn = new NeuralNetwork(3,3,2);
+		double[] myInput = {1,0,1};
+		//nn.initializeInput(myInput);
+		
+		//nn.print();
+		//System.out.println("****************");
+		
+		double[] myOutput = nn.predict(myInput);
 		nn.print();
+		
+		System.out.println("My Input Array:");
+		for (double val : myInput) {
+			System.out.println(val + ", ");
+		}
+		System.out.println("\nMy Output Array:");
+		for (double val : myOutput) {
+			System.out.println(val + ", ");
+		}
+
+		
 	}
 }
