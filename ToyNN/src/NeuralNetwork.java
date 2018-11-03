@@ -169,12 +169,30 @@ public class NeuralNetwork {
 		hidden = Matrix.dot(getWeights_IH().getTranspose(), getInput());
 		hidden = Matrix.add(hidden, getBias_IH());
 		//Activation function on H
+			//Sigmoid Function!
+		for (int i = 0; i < hidden.getRows(); i++) {
+			for (int j = 0; j < hidden.getCols(); j++) {
+				
+				double sig = 1.0 / (1 + Math.exp(-hidden.getElement(i, j)));
+				
+				hidden.setElement(i, j, sig);
+			}
+		}
 		
 		
 		// A = W-ho(T) • H + B-ho
 		output = Matrix.dot(getWeights_HO().getTranspose(), getHidden());
 		output = Matrix.add(output, getBias_HO());
 		//Activation function on A
+			//Sigmoid Function!
+		for (int i = 0; i < output.getRows(); i++) {
+			for (int j = 0; j < output.getCols(); j++) {
+				
+				double sig = 1.0 / (1 + Math.exp(-output.getElement(i, j)));
+				
+				output.setElement(i, j, sig);
+			}
+		}
 		
 		
 	}
