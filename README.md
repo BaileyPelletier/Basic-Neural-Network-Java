@@ -6,8 +6,8 @@ This neural network is meant to be basic and simple in its design as it is a lea
 
 #### Table of Contents
 - ToDo List
-- Matrix Class Library Documentation
-- Neural Network Class Library Documentation
+- [Matrix Class Library Documentation](https://github.com/BaileyPelletier/Basic-Neural-Network-Java#matrix-class-documentation)
+- [Neural Network Class Library Documentation](https://github.com/BaileyPelletier/Basic-Neural-Network-Java#neural-network-class-documentation
 
 
 #### ToDo:
