@@ -1,5 +1,7 @@
 # Basic-Neural-Network-Java
 
+![GIF from the movie Terminator](https://media.giphy.com/media/1j9f6wCFelOwzbGyoa/giphy.gif)
+
 This neural network is meant to be basic and simple in its design as it is a learning experience. Inlcuded in this repo is a Matrix class library that is also built from the ground-up. The basis of design for these libraries come from a similar repo, **[Toy-Neural-Network-JS](https://github.com/BaileyPelletier/Toy-Neural-Network-JS)**. However, the libraries built in this repo expand upon the JavaScript versions and utilizes Java concepts as I learn them. As stated before, this is a personal project for educational purposes.
 
 #### Table of Contents
@@ -36,7 +38,15 @@ This neural network is meant to be basic and simple in its design as it is a lea
    - [ ] XOR Problem
 - [ ] **Add Visualization**
 
+![GIF saying "This is too much"](https://media.giphy.com/media/l3q2Ph0I1osaagoQE/giphy.gif)
+
+</br>
+</br>
+</br>
+
 ## Matrix Class Documentation
+
+![GIF from the movie Matrix](https://media.giphy.com/media/QS0KOjNRG0tfG/giphy.gif)
 
 ### Matric UML Class Diagram
 |     Matrix      |
