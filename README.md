@@ -1,8 +1,14 @@
 # Basic-Neural-Network-Java
 
-This neural network is meant to be basic and simple in its design as it is a learning experience. Inlcuded in this repo is a Matrix class library that is also built from the ground-up. The basis of design for these libraries come from a similar repo, **[Toy-Neural-Network-JS](https://github.com/BaileyPelletier/Toy-Neural-Network-JS)**.
+This neural network is meant to be basic and simple in its design as it is a learning experience. Inlcuded in this repo is a Matrix class library that is also built from the ground-up. The basis of design for these libraries come from a similar repo, **[Toy-Neural-Network-JS](https://github.com/BaileyPelletier/Toy-Neural-Network-JS)**. However, the libraries built in this repo expand upon the JavaScript versions and utilizes Java concepts as I learn them. As stated before, this is a personal project for educational purposes.
 
-### ToDo:
+#### Table of Contents
+- ToDo List
+- Matrix Class Library Documentation
+- Neural Network Class Library Documentation
+
+
+#### ToDo:
 - [ ] **Build Matrix Class Library**
    - [x] Accessor/Mutator (Getter/Setter) Methods for Rows & Cols
    - [x] Constructors & from/toArray methods & toString()
