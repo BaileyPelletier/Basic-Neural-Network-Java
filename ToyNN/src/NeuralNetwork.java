@@ -203,7 +203,7 @@ public class NeuralNetwork {
 	 * Creates and initializes vector matrix with random values
 	 * between 0 and 1.
 	 */
-	public void initializeInput() {
+	private void initializeInput() {
 		input = new Matrix(input_nodes, 1);
 		input.initialRand();
 	}
@@ -219,13 +219,13 @@ public class NeuralNetwork {
 	/**
 	 * Creates a Zero vector for hidden layer
 	 */
-	public void initializeHidden() {
+	private void initializeHidden() {
 		hidden = new Matrix(hidden_nodes, 1);
 	}
 	/**
 	 * Creates a Zero vector for output layer
 	 */
-	public void initializeOutput() {
+	private void initializeOutput() {
 		output = new Matrix(output_nodes, 1);
 	}
 	
@@ -233,7 +233,7 @@ public class NeuralNetwork {
 	 * Creates and initializes Weight matrix between
 	 * input and hidden layers with random values between 0 and 1.
 	 */
-	public void initializeWeights_IH() {
+	private void initializeWeights_IH() {
 		weights_ih = new Matrix(getInput().getRows(), getHidden().getRows());
 		weights_ih.initialRand();
 	}
@@ -241,7 +241,7 @@ public class NeuralNetwork {
 	 * Creates and initializes Weight matrix between
 	 * hidden and output layers with random values between 0 and 1.
 	 */
-	public void initializeWeights_HO() {
+	private void initializeWeights_HO() {
 		weights_ho = new Matrix(getHidden().getRows(), getOutput().getRows());
 		weights_ho.initialRand();
 	}
@@ -250,7 +250,7 @@ public class NeuralNetwork {
 	 * Creates and initializes Bias vector between
 	 * input and hidden layers with random values between 0 and 1.
 	 */
-	public void initializeBias_IH() {
+	private void initializeBias_IH() {
 		b_ih = new Matrix(getHidden().getRows(), 1);
 		b_ih.initialRand();
 	}
@@ -258,7 +258,7 @@ public class NeuralNetwork {
 	 * Creates and initializes Bias vector between
 	 * hidden and output layers with random values between 0 and 1.
 	 */
-	public void initializeBias_HO() {
+	private void initializeBias_HO() {
 		b_ho = new Matrix(getOutput().getRows(), 1);
 		b_ho.initialRand();
 	}
