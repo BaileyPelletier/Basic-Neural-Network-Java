@@ -6,6 +6,7 @@ This neural network is meant to be basic and simple in its design as it is a lea
 
 #### Table of Contents
 - [ToDo List](#todo)
+- [Neural Networks: Overview](#neural-networks-overview)
 - [Matrix Class Library Documentation](#matrix-class-documentation)
 - [Neural Network Class Library Documentation](#neural-network-class-documentation)
 
@@ -43,6 +44,10 @@ This neural network is meant to be basic and simple in its design as it is a lea
 </br>
 </br>
 </br>
+
+## Neural Networks: Overview
+
+**_[Insert brief explaination of neural networks]_**
 
 ## Matrix Class Documentation
 
