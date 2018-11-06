@@ -73,6 +73,7 @@ This neural network is meant to be basic and simple in its design as it is a lea
 | + setCols(int j): void|
 | + setElement(int i, int j, double val): void|
 | + add(double amount): void|
+| + mult(double scalar): void|
 |--------------------------------------------------------------|
 |------------------------ **STATIC** ----------------------------|
 | + fromArray(double[] arr): Matrix|
