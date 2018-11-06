@@ -56,6 +56,7 @@ This neural network is meant to be basic and simple in its design as it is a lea
 | - data: double[][] |
 |--------------------------------------------------------------|
 | + toString(): String|
+| + copy(): Matrix|
 | + initialRand(): void|
 | + initialRandInt(): void|
 | + initialSimple(): void|
@@ -99,7 +100,9 @@ This neural network is meant to be basic and simple in its design as it is a lea
 | - b_ho: Matrix |
 |--------------------------------------------------------------|
 | + toString(): String|
+| + toStringSimple(): String|
 | + print(): void|
+| + printSimple(): void|
 | + getInput_Nodes(): int|
 | + getHidden_Nodes(): int|
 | + getOutput_Nodes(): int|
