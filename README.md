@@ -5,9 +5,9 @@
 This neural network is meant to be basic and simple in its design as it is a learning experience. Inlcuded in this repo is a Matrix class library that is also built from the ground-up. The basis of design for these libraries come from a similar repo, **[Toy-Neural-Network-JS](https://github.com/BaileyPelletier/Toy-Neural-Network-JS)**. However, the libraries built in this repo expand upon the JavaScript versions and utilizes Java concepts as I learn them. As stated before, this is a personal project for educational purposes. 
 
 #### Table of Contents
-- [ToDo List](https://github.com/BaileyPelletier/Basic-Neural-Network-Java/blob/master/README.md#todo)
-- [Matrix Class Library Documentation](https://github.com/BaileyPelletier/Basic-Neural-Network-Java#matrix-class-documentation)
-- [Neural Network Class Library Documentation](https://github.com/BaileyPelletier/Basic-Neural-Network-Java#neural-network-class-documentation)
+- [ToDo List](#todo)
+- [Matrix Class Library Documentation](#matrix-class-documentation)
+- [Neural Network Class Library Documentation](#neural-network-class-documentation)
 
 
 #### ToDo:
