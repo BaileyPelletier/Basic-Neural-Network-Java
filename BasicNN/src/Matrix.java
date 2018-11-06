@@ -91,6 +91,7 @@ public class Matrix {
 		
 		return arr;
 	}
+	
 	/**
 	 * Returns a String representation of a matrix object
 	 * 
@@ -108,6 +109,17 @@ public class Matrix {
 			s += "\n";
 		}
 		return s;
+	}
+	public Matrix copy() {
+		Matrix copy = new Matrix(this.rows, this.cols);
+		for (int i = 0; i < this.rows; i++) {
+			for (int j = 0; j < this.cols; j++) {
+				copy.setElement(i, j, this.getElement(i, j));
+			}
+		}
+		
+		return copy;
+		
 	}
 	
 	/**

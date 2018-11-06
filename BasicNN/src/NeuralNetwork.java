@@ -29,6 +29,8 @@ public class NeuralNetwork {
 	private Matrix b_ih;
 	private Matrix b_ho;
 	
+	private double learningRate = 0.1;
+	
 	
 	//Constructors
 	/**
@@ -81,10 +83,29 @@ public class NeuralNetwork {
 		return s;
 	}
 	/**
+	 * Simplified toString(). Returns only Input, Hidden, and Output layers
+	 * @return
+	 */
+	public String toStringSimple() {
+		String s = "";
+		
+		s += "Input Matrix :\n" + getInput().toString() + "\n";
+		s += "Hidden Matrix :\n" + getHidden().toString() + "\n";
+		s += "Output Matrix :\n" + getOutput().toString() + "\n";
+		
+		return s;
+	}
+	/**
 	 * Prints out all matrices of the neural network
 	 */
 	public void print() {
 		System.out.println(this.toString());
+	}
+	/**
+	 * Prints the Input, Hidden, and Output matrices only
+	 */
+	public void printSimple() {
+		System.out.println(this.toStringSimple());
 	}
 	
 	//Simple Getters
@@ -162,6 +183,13 @@ public class NeuralNetwork {
 		return this.b_ho;
 	}
 	
+	/**
+	 * @return learningRate
+	 */
+	public double getLearningRate() {
+		return learningRate;
+	}
+	
 	
 	//Simple Setters
 	/**
@@ -196,6 +224,14 @@ public class NeuralNetwork {
 			this.output_nodes = i;
 		else
 			this.output_nodes = 1;
+	}
+	
+	/**
+	 * Sets learningRate to new value. Default is 0.1
+	 * @param learn
+	 */
+	public void setLearningRate(double learn) {
+		learningRate = learn;
 	}
 	
 		// Creates & randomly initializes elements
@@ -269,6 +305,8 @@ public class NeuralNetwork {
 	 * <h2>FeedForward Process</h2>
 	 * Using current weights and inputs, calculates
 	 * hidden layer values and then output layer values
+	 * 
+	 * Input layer must be already initialized
 	 */
 	public void predict() {
 		
@@ -319,6 +357,52 @@ public class NeuralNetwork {
 		predict();
 		
 		return Matrix.toArrary(output);
+	}
+	
+	public void train(double[] inputs, double[] targets) {
+		/*
+		 * COME BACK TO THIS WITH A WHITEBOARD
+		 * DRAW OUT OPERATIONS AND WHY
+		 */
+		//this.input
+		//this.hidden
+		//this.output
+		
+		Matrix target = Matrix.fromArrary(targets);
+				
+		/**** Feed Forward *****/
+		this.initializeInput(inputs);
+		this.predict();
+		
+		
+		
+		/**** Output Error ****/
+		
+		Matrix output_error = Matrix.subtract(target, output);
+		
+		Matrix gradients_output = output.copy();
+		
+		//Derivative of Sigmoid Function Applied
+		// x * (1 - x)
+		for (int i = 0; i < output.getRows(); i++) {
+			for (int j = 0; j < output.getCols(); j++) {
+				double val = gradients_output.getElement(i, j) * (1 - gradients_output.getElement(i, j));
+				gradients_output.setElement(i, j, val);
+				
+			}
+		}
+		
+		gradients_output = Matrix.dot(gradients_output, output_error);
+		gradients_output.mult(learningRate);
+		
+		Matrix hiddenT = hidden.getTranspose();
+		Matrix weights_ho_deltas = Matrix.dot(gradients_output, hiddenT);
+		
+		weights_ho = Matrix.add(weights_ho, weights_ho_deltas);
+		b_ho = Matrix.add(b_ho, gradients_output);
+		
+		/**** Gradient Descent Calculation ****/
+		
 	}
 	
 	
